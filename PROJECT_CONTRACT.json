@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "metrics": {
+    "production_loc": 2771,
+    "production_files": 21,
+    "production_packages": 8,
+    "test_files": 10,
+    "production_functions": 60,
+    "decision_points": 83
+  },
+  "persistence": {
+    "module": "go.etcd.io/bbolt",
+    "entities": ["Destination", "Deck", "DrawRecord", "UserPreference"],
+    "reopen_test": "TestPersistenceSurvivesReopen"
+  },
+  "workflows": [
+    {"steps": ["load destination catalog", "filter by mountain sea city countryside", "build and save deck", "return rotatable deck"], "test": "TestWorkflowOne"},
+    {"steps": ["receive camera or touch gesture", "interpret rotation or draw", "show highlight and best season", "record draw history"], "test": "TestWorkflowTwo"},
+    {"steps": ["read draw history", "validate returnable card", "save returned state", "apply preference season guidance"], "test": "TestWorkflowThree"}
+  ]
+}
